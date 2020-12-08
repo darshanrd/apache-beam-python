@@ -28,26 +28,36 @@ Install virtualenv and activate a Python virtual environment
 Install virtualenv version 13.1.0 or above if it is not installed already.
 
 Install pip3 package
-```sudo apt-get install python3-pip```
 
-```pip3 install --upgrade virtualenv \
-    --user```
+```
+sudo apt-get install python3-pip
+```
+
+```
+pip3 install --upgrade virtualenv --user
+```
 
 Create a Python virtual environment
 
-```python3 -m virtualenv env```
+```
+python3 -m virtualenv env
+```
 
 and activate it.
 
-```source env/bin/activate```
+```
+source env/bin/activate
+```
 
 Download the samples and the Apache Beam SDK for Python using the pip3 command
 In order to write a Python Dataflow job, you will first need to download the SDK from the repository.
 
 When you run this command, pip3 will download and install the appropriate version of the Apache Beam SDK.
 
+```
 pip3 install --quiet \
     apache-beam[gcp]
+```
 
 
 Instructions to Create Templates in Dataflow ans using DataflowRunner

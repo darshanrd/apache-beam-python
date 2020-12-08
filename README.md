@@ -1,4 +1,4 @@
-# Dataflow Word Count Tutorial using the Apache Beam Python SDK
+# Dataflow Word Count Tutorial using Apache Beam Python SDK
 
 To see what code we will be running today, you can visit the GitHub repository's example [wordcount](https://github.com/darshanrd/apache-beam-python/blob/main/dataflow_wordcount.py).
 
@@ -18,7 +18,7 @@ gcloud init
 gcloud auth application-default login
 ```
 
-Ensure you provide right roles and premissions to GCS bucket where you would like to write the output files. GCS Admin role can be granted for the sake of testing purpose only, not to be used in Production
+Ensure you provide right roles and premissions to GCS bucket where you would like to write the output files to. GCS Admin role (roles/storage.objectAdmin) can be granted for the sake of testing purpose only, not to be used in Production
 
 ## Setup Python Environment
 
@@ -73,7 +73,8 @@ Ensure that the file "dataflow_wordcount.py" has been copied into the virtual en
 cd env/lib/python3.7/site-packages/apache_beam/examples/
 ```
 
-Launch your pipeline on the Dataflow Service
+##Launch your pipeline on the Dataflow Service
+
 Use Python to launch your pipeline on the Cloud Dataflow service. The running pipeline is referred to as a job.
 
 ```python3 -m  dataflow_wordcount     --project <pass_project_id>     --runner DataflowRunner     --temp_location     <pass_gcs_bucket_temp_path>     --input     <pass_gcs_bucket_input_path>  --output     <pass_gcs_bucket_output_path>    --job_name <name_of_the_job>     --region <pass_region>
@@ -105,7 +106,7 @@ python3 -m  dataflow_wordcount     --project pso-wmt-sandbox     --runner Datafl
 ```
 
 
-Please follow the below link to Create Templates in Dataflow using DataflowRunner
+###Please follow the below link to Create Templates in Dataflow using DataflowRunner
 
 [Creating and Staging templates](https://cloud.google.com/dataflow/docs/guides/templates/creating-templates#python)
 

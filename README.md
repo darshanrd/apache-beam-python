@@ -18,7 +18,7 @@ gcloud init
 gcloud auth application-default login
 ```
 
-Ensure you provide right roles and premissions to GCS bucket wher you would liek to write the output
+Ensure you provide right roles and premissions to GCS bucket where you would like to write the output files. GCS Admin role can be granted for the sake of testing purpose
 
 ## Setup Python Environment
 
@@ -60,6 +60,8 @@ pip3 install --quiet \
 ```
 
 Git clone the wordcount python file
+[wordcount](https://github.com/darshanrd/apache-beam-python/blob/main/dataflow_wordcount.py).
+
 ```
 git clone https://github.com/darshanrd/apache-beam-python.git
 cp apache-beam-python/dataflow_wordcount.py env/lib/python3.7/site-packages/apache_beam/examples/
@@ -74,7 +76,7 @@ cd env/lib/python3.7/site-packages/apache_beam/examples/
 Launch your pipeline on the Dataflow Service
 Use Python to launch your pipeline on the Cloud Dataflow service. The running pipeline is referred to as a job.
 
-python3 -m  dataflow_wordcount     --project <pass_project_id>     --runner DataflowRunner     --temp_location     <pass_gcs_bucket_path>     --output     <pass_gcs_bucket_path>     --job_name <name_of_the_job>     --region <pass_region>
+```python3 -m  dataflow_wordcount     --project <pass_project_id>     --runner DataflowRunner     --temp_location     <pass_gcs_bucket_path>     --output     <pass_gcs_bucket_path>     --job_name <name_of_the_job>     --region <pass_region>
 
 -- project is the GCP project.
 
@@ -87,14 +89,14 @@ python3 -m  dataflow_wordcount     --project <pass_project_id>     --runner Data
 -- job_name is a user-given unique identifier. Only one job may execute with the same name.
 
 -- region specifies a regional endpoint for deploying your Dataflow jobs.
+```
 
-Example Invocation
+Sample Invocation
+
 ```
 python3 -m  dataflow_wordcount     --project pso-wmt-sandbox     --runner DataflowRunner     --temp_location     gs://darshan-dataflow/temp     --output     gs://darshan-dataflow/results/output     --job_name dataflow-wordcount     --region us-central1
 ```
 
-
-[wordcount](https://github.com/darshanrd/apache-beam-python/blob/main/dataflow_wordcount.py).
 
 
 Instructions to Create Templates in Dataflow using DataflowRunner

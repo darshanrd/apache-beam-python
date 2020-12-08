@@ -73,7 +73,7 @@ Ensure that the file "dataflow_wordcount.py" has been copied into the virtual en
 cd env/lib/python3.7/site-packages/apache_beam/examples/
 ```
 
-##Launch your pipeline on the Dataflow Service
+## Launch your pipeline on the Dataflow Service
 
 Use Python to launch your pipeline on the Cloud Dataflow service. The running pipeline is referred to as a job.
 
@@ -106,7 +106,7 @@ python3 -m  dataflow_wordcount     --project pso-wmt-sandbox     --runner Datafl
 ```
 
 
-###Please follow the below link to Create Templates in Dataflow using DataflowRunner
+### Please follow the below link to Create Templates in Dataflow using DataflowRunner
 
 [Creating and Staging templates](https://cloud.google.com/dataflow/docs/guides/templates/creating-templates#python)
 

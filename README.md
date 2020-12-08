@@ -59,7 +59,45 @@ pip3 install --quiet \
     apache-beam[gcp]
 ```
 
+Git clone the wordcount python file
+```
+git clone https://github.com/darshanrd/apache-beam-python.git
+cp apache-beam-python/dataflow_wordcount.py env/lib/python3.7/site-packages/apache_beam/examples/
+```
 
-Instructions to Create Templates in Dataflow ans using DataflowRunner
+Ensure that the file "dataflow_wordcount.py" has been copied into the virtual env directory where standard apache beam examples are present "env/lib/python3.7/site-packages/apache_beam/examples/"
+
+```
+cd env/lib/python3.7/site-packages/apache_beam/examples/
+```
+
+Launch your pipeline on the Dataflow Service
+Use Python to launch your pipeline on the Cloud Dataflow service. The running pipeline is referred to as a job.
+
+python3 -m  dataflow_wordcount     --project <pass_project_id>     --runner DataflowRunner     --temp_location     <pass_gcs_bucket_path>     --output     <pass_gcs_bucket_path>     --job_name <name_of_the_job>     --region <pass_region>
+
+-- project is the GCP project.
+
+-- runner is the specific execution engine to use to run your pipeline. The DataflowRunner uses the Dataflow Service as the execution engine.
+
+-- temp_location is the storage bucket Cloud Dataflow will use for the binaries and other data for running your pipeline. This location can be shared across multiple jobs.
+
+-- output is the bucket used by the WordCount example to store the job results.
+
+-- job_name is a user-given unique identifier. Only one job may execute with the same name.
+
+-- region specifies a regional endpoint for deploying your Dataflow jobs.
+
+Example Invocation
+```
+python3 -m  dataflow_wordcount     --project pso-wmt-sandbox     --runner DataflowRunner     --temp_location     gs://darshan-dataflow/temp     --output     gs://darshan-dataflow/results/output     --job_name dataflow-wordcount     --region us-central1
+```
+
+
+[wordcount](https://github.com/darshanrd/apache-beam-python/blob/main/dataflow_wordcount.py).
+
+
+Instructions to Create Templates in Dataflow using DataflowRunner
+
 [Creating and Staging templates](https://cloud.google.com/dataflow/docs/guides/templates/creating-templates#python)
 

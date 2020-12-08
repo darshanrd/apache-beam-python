@@ -1,8 +1,8 @@
 # Dataflow Word Count Tutorial using the Apache Beam Python SDK
 
-To see what code we will be running today, you can visit the Apache Beam GitHub repository's example [wordcount](https://github.com/darshanrd/apache-beam-python/blob/main/dataflow_wordcount.py).
+To see what code we will be running today, you can visit the GitHub repository's example [wordcount](https://github.com/darshanrd/apache-beam-python/blob/main/dataflow_wordcount.py).
 
-Please follow the below instructions to set up your 
+Please follow the below instructions to set up your GCP Environment
 
 [Quickstart using Python](https://cloud.google.com/dataflow/docs/quickstarts/quickstart-python)
 
@@ -18,7 +18,7 @@ gcloud init
 gcloud auth application-default login
 ```
 
-Ensure you provide right roles and premissions to GCS bucket where you would like to write the output files. GCS Admin role can be granted for the sake of testing purpose
+Ensure you provide right roles and premissions to GCS bucket where you would like to write the output files. GCS Admin role can be granted for the sake of testing purpose only, not to be used in Production
 
 ## Setup Python Environment
 
